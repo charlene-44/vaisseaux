@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        Croiseur croiseur1 = new Croiseur("Acclamator", "Croiseur", 752);
-        Croiseur croiseur2 = new Croiseur("Acclamator", "Croiseur", 150);
-        Intercepteur intercepteur = new Intercepteur("X-wing", "Intercepteur", 2);
+        Croiseur croiseur1 = new Croiseur("Acclamator", "Croiseur",752, 700);
+        Croiseur croiseur2 = new Croiseur("Acclamator", "Croiseur", 150, 165);
+        Intercepteur intercepteur = new Intercepteur("X-wing", "Intercepteur",12.5, 2);
 
         croiseur1.charger(600);
         croiseur1.charger(200);
@@ -67,8 +67,8 @@ class Croiseur extends Vaisseau {
         System.out.println("Capacité: " + capacite + ", Chargement actuel: " + chargementActuel);
     }
 
-    public Croiseur(String nom, String type, int capacite) {
-        super(nom, type, capacite);
+    public Croiseur(String nom, String type, double taille, int capacite) {
+        super(nom, type, taille);
         this.capacite = capacite;
     }
 }
@@ -97,8 +97,8 @@ class Intercepteur extends Vaisseau {
         System.out.println("Canon: " + canon + ", nombre de tirs: " + nombreDeTirs);
     }
     
-    public Intercepteur(String nom, String type, int canon) {
-        super(nom, type, canon);
+    public Intercepteur(String nom, String type, double taille, int canon) {
+        super(nom, type, taille);
         this.canon = canon;
     }
 }
