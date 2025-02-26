@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        Croiseurs croiseur1 = new Croiseurs("Acclamator", "Croiseur", 752);
-        Croiseurs croiseur2 = new Croiseurs("Acclamator", "Croiseur", 150);
-        Intercepteurs intercepteur = new Intercepteurs("X-wing", "Intercepteur", 2);
+        Croiseur croiseur1 = new Croiseur("Acclamator", "Croiseur", 752);
+        Croiseur croiseur2 = new Croiseur("Acclamator", "Croiseur", 150);
+        Intercepteur intercepteur = new Intercepteur("X-wing", "Intercepteur", 2);
 
         croiseur1.charger(600);
         croiseur1.charger(200);
@@ -21,17 +21,17 @@ public class Main {
     }
 
     // Fonction qui prend un Vaisseau en paramètre et affiche ses caractéristiques
-    public static void afficherCapacites(Vaisseaux vaisseau) {
+    public static void afficherCapacites(Vaisseau vaisseau) {
         vaisseau.afficherCaracteristiques();
     }
 }
 
-class Vaisseaux {
+class Vaisseau {
     String nom;
     String type;
-    int taille;
+    double taille;
 
-    public Vaisseaux(String nom, String type, int taille) {
+    public Vaisseau(String nom, String type, double taille) {
         this.nom = nom;
         this.type = type;
         this.taille = taille;
@@ -42,7 +42,7 @@ class Vaisseaux {
     }
 }
 
-class Croiseurs extends Vaisseaux {
+class Croiseur extends Vaisseau {
     int capacite;
     int chargementActuel = 0; // Pour suivre le nombre de personnes actuellement chargées
 
@@ -67,13 +67,13 @@ class Croiseurs extends Vaisseaux {
         System.out.println("Capacité: " + capacite + ", Chargement actuel: " + chargementActuel);
     }
 
-    public Croiseurs(String nom, String type, int capacite) {
+    public Croiseur(String nom, String type, int capacite) {
         super(nom, type, capacite);
         this.capacite = capacite;
     }
 }
 
-class Intercepteurs extends Vaisseaux {
+class Intercepteur extends Vaisseau {
     int canon;
     int nombreDeTirs = 0;
     
@@ -97,7 +97,7 @@ class Intercepteurs extends Vaisseaux {
         System.out.println("Canon: " + canon + ", nombre de tirs: " + nombreDeTirs);
     }
     
-    public Intercepteurs(String nom, String type, int canon) {
+    public Intercepteur(String nom, String type, int canon) {
         super(nom, type, canon);
         this.canon = canon;
     }
